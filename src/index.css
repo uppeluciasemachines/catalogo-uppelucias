@@ -1,0 +1,153 @@
+/* 
+  =====================================================
+  DESIGN SYSTEM - UP Universo das Pelúcias
+  =====================================================
+  
+  Este arquivo define todas as cores e estilos do site.
+  Para alterar cores, modifique os valores HSL abaixo.
+  
+  COMO FUNCIONA HSL:
+  - H (Hue/Matiz): 0-360 (cor no círculo cromático)
+  - S (Saturation): 0-100% (intensidade da cor)
+  - L (Lightness): 0-100% (claridade)
+  
+  CORES PRINCIPAIS:
+  - Laranja (primary): usado em botões e preços
+  - Amarelo (accent): usado em etiquetas de categoria
+  - Verde WhatsApp: usado no botão de enviar pedido
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Fundo principal - off-white limpo */
+    --background: 40 20% 98%;
+    --foreground: 0 0% 15%;
+
+    /* Cards de produto */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 15%;
+
+    /* Popover e modais */
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 15%;
+
+    /* 
+      COR PRINCIPAL - LARANJA VIBRANTE
+      Usada em: botões de ação, preços, elementos de destaque
+      Para alterar, modifique o valor abaixo
+    */
+    --primary: 25 95% 53%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secundário - cinza claro para bordas e fundos sutis */
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 15%;
+
+    /* Elementos discretos */
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+
+    /* 
+      COR DE DESTAQUE - AMARELO
+      Usada em: etiquetas de categoria nos produtos
+    */
+    --accent: 45 100% 51%;
+    --accent-foreground: 0 0% 15%;
+
+    /* Cores de erro/alerta */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Bordas e inputs */
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 25 95% 53%;
+
+    /* Raio de borda padrão */
+    --radius: 0.5rem;
+
+    /* 
+      COR DO WHATSAPP - VERDE
+      Usada no botão de enviar pedido
+    */
+    --whatsapp: 142 70% 45%;
+    --whatsapp-foreground: 0 0% 100%;
+
+    /* Sidebar do carrinho */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 0 0% 15%;
+    --sidebar-primary: 25 95% 53%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 45 100% 51%;
+    --sidebar-accent-foreground: 0 0% 15%;
+    --sidebar-border: 0 0% 90%;
+    --sidebar-ring: 25 95% 53%;
+  }
+
+  /* Modo escuro (opcional - não ativado por padrão) */
+  .dark {
+    --background: 0 0% 10%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 12%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 25 95% 53%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 20%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 65%;
+    --accent: 45 100% 51%;
+    --accent-foreground: 0 0% 15%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 25 95% 53%;
+    --whatsapp: 142 70% 45%;
+    --whatsapp-foreground: 0 0% 100%;
+    --sidebar-background: 0 0% 12%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 25 95% 53%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 45 100% 51%;
+    --sidebar-accent-foreground: 0 0% 15%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 25 95% 53%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    /* Fonte moderna sem serifa */
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+  }
+}
+
+/* 
+  =====================================================
+  ESTILOS PERSONALIZADOS
+  =====================================================
+*/
+
+@layer utilities {
+  /* Sombra suave para cards */
+  .card-shadow {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+  
+  /* Sombra ao passar o mouse */
+  .card-shadow-hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  }
+}
