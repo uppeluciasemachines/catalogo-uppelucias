@@ -30,11 +30,12 @@ import React, { createContext, useContext, useState, ReactNode } from "react";
 export interface Product {
   id: string;           // Identificador único
   name: string;         // Nome da pelúcia
-  price: number;        // Preço em reais (ex: 89.90)
+  price: number;        // Preço em reais (ex: 89.90) - preço promocional se houver originalPrice
   image: string;        // URL ou caminho da imagem principal
   images?: string[];    // URLs de imagens adicionais (para carrossel)
   category: string;     // Categoria do produto
   size?: string;        // Tamanho (opcional)
+  originalPrice?: number; // Preço original (para promoções) - opcional
 }
 
 /**

@@ -150,4 +150,14 @@
   .card-shadow-hover {
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
   }
+  
+  /* Esconde a barra de rolagem mas mantém funcionalidade de scroll */
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE e Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari e Opera */
+  }
 }

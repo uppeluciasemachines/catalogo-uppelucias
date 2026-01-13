@@ -46,8 +46,8 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-card border-b border-border">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+      <div className="container mx-auto px-3 sm:px-4">
+        <div className="flex items-center justify-between h-14 sm:h-16">
           
           {/* ============================================
               LOGO / NOME DA LOJA
@@ -58,8 +58,8 @@ export function Header() {
               3. Coloque sua logo em: public/images/logo.png
           ============================================ */}
           <Link to="/" className="flex items-center">
-            {/* Texto como logo (atual) */}
-            <span className="text-2xl font-bold text-primary">
+            {/* Texto como logo (atual) - mobile-first: menor em mobile, maior em desktop */}
+            <span className="text-lg sm:text-xl md:text-2xl font-bold text-primary truncate max-w-[200px] sm:max-w-none">
               UP Universo das Pelúcias
             </span>
             
@@ -67,7 +67,7 @@ export function Header() {
             <img 
               src="/images/logo.png" 
               alt="UP Universo das Pelúcias" 
-              className="h-10 w-auto"
+              className="h-8 sm:h-10 w-auto"
             />
             */}
           </Link>
@@ -94,10 +94,10 @@ export function Header() {
           ============================================ */}
           <button
             onClick={() => setIsCartOpen(true)}
-            className="relative p-2 hover:bg-secondary rounded-lg transition-colors"
+            className="relative p-1.5 sm:p-2 hover:bg-secondary rounded-lg transition-colors flex-shrink-0"
             aria-label="Abrir carrinho"
           >
-            <ShoppingCart className="w-6 h-6 text-foreground" />
+            <ShoppingCart className="w-5 h-5 sm:w-6 sm:h-6 text-foreground" />
             
             {/* Contador de itens (aparece se houver itens) */}
             {totalItems > 0 && (

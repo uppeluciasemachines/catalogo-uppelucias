@@ -42,9 +42,10 @@ export function CategoryFilter() {
   const location = useLocation();
   
   return (
-    <div className="bg-card border-b border-border py-4">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-wrap gap-3">
+    <div className="bg-card border-b border-border py-3 sm:py-4">
+      <div className="container mx-auto">
+        {/* Scroll horizontal nativo - permite deslizar para ver todas as opções */}
+        <div className="flex flex-nowrap gap-3 overflow-x-auto scroll-smooth scrollbar-hide pb-2 px-3 sm:px-4">
           {categories.map((category) => {
             // Verifica se esta categoria está ativa pela rota atual
             const isActive = location.pathname === category.path;
@@ -54,7 +55,7 @@ export function CategoryFilter() {
                 key={category.id}
                 to={category.path}
                 className={`
-                  px-6 py-2 rounded-full font-medium transition-all
+                  px-4 py-2 rounded-full font-medium transition-all whitespace-nowrap flex-shrink-0 text-sm sm:text-base
                   ${isActive
                     ? "bg-primary text-primary-foreground"  // Estado ativo: fundo laranja
                     : "bg-secondary text-foreground border border-border hover:border-primary" // Estado inativo

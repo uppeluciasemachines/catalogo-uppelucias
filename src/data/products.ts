@@ -132,13 +132,14 @@ export const productsNovidades: Product[] = [
 
 /**
  * Produtos da seção "Promoções"
- * Mesma estrutura dos produtos acima
+ * Inclui preço original (originalPrice) para exibir formato promocional
  */
 export const productsPromocoes: Product[] = [
   {
     id: "9",
     name: "Pelúcia Pikachu 30cm",
     price: 49.90,
+    originalPrice: 79.90,
     image: "/imagens/produtos/personagens/Pikachu frente.jpg",
     images: ["/imagens/produtos/personagens/Pikachu lado.jpg", "/imagens/produtos/personagens/Pikachu costas.jpg"],
     category: "personagens",
@@ -148,6 +149,7 @@ export const productsPromocoes: Product[] = [
     id: "10",
     name: "Pelúcia Patrick 35cm",
     price: 39.90,
+    originalPrice: 65.90,
     image: "/imagens/produtos/personagens/Patrick frente 02.jpg",
     images: ["/imagens/produtos/personagens/Patrick lado.jpg", "/imagens/produtos/personagens/Patrick costas.jpg"],
     category: "personagens",
@@ -157,6 +159,7 @@ export const productsPromocoes: Product[] = [
     id: "11",
     name: "Pelúcia Bob Esponja 30cm",
     price: 44.90,
+    originalPrice: 74.90,
     image: "/imagens/produtos/personagens/Bob esponja frente 02.jpg",
     images: ["/imagens/produtos/personagens/bob esponja lado.jpg", "/imagens/produtos/personagens/Bob esponja costas.jpg"],
     category: "personagens",
@@ -166,6 +169,7 @@ export const productsPromocoes: Product[] = [
     id: "12",
     name: "Pelúcia Eevee 30cm",
     price: 35.90,
+    originalPrice: 59.90,
     image: "/imagens/produtos/personagens/Eevee frente.jpg",
     images: ["/imagens/produtos/personagens/Eevee frente orelha baixa.jpg", "/imagens/produtos/personagens/Eevee lado.jpg", "/imagens/produtos/personagens/Eevee costas.jpg"],
     category: "personagens",

@@ -48,17 +48,17 @@ export function ProductSection({
   }
 
   return (
-    <section id={id} className="py-8">
-      <div className="container mx-auto px-4">
+    <section id={id} className="py-6 sm:py-8">
+      <div className="container mx-auto px-3 sm:px-4">
         {/* ============================================
             BOTÃO VOLTAR (opcional)
         ============================================ */}
         {showBackButton && (
           <Link
             to="/"
-            className="flex items-center gap-2 text-foreground hover:text-primary transition-colors font-medium mb-4"
+            className="flex items-center gap-2 text-foreground hover:text-primary transition-colors font-medium mb-4 text-sm sm:text-base"
           >
-            <ArrowLeft className="w-5 h-5" />
+            <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5" />
             Voltar
           </Link>
         )}
@@ -67,18 +67,19 @@ export function ProductSection({
             CABEÇALHO DA SEÇÃO
             Título à esquerda, link "Ver Todos" à direita
         ============================================ */}
-        <div className="flex items-center justify-between mb-6">
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground">
+        <div className="flex items-center justify-between mb-4 sm:mb-6 gap-2">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground">
             {title}
           </h2>
           
           {showViewAll && (
             <Link
               to={`/${id}`}
-              className="flex items-center gap-2 text-foreground hover:text-primary transition-colors font-medium"
+              className="flex items-center gap-1 sm:gap-2 text-foreground hover:text-primary transition-colors font-medium text-sm sm:text-base flex-shrink-0"
             >
-              Ver Todos
-              <ArrowRight className="w-5 h-5" />
+              <span className="hidden sm:inline">Ver Todos</span>
+              <span className="sm:hidden">Todos</span>
+              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
             </Link>
           )}
         </div>
@@ -86,12 +87,12 @@ export function ProductSection({
         {/* ============================================
             GRID DE PRODUTOS
             
-            Responsivo:
-            - 1 coluna em telas pequenas
-            - 2 colunas em tablets
-            - 4 colunas em desktops
+            Responsivo (mobile-first):
+            - 2 colunas em telas pequenas (mobile) - padrão
+            - 3 colunas em tablets (md)
+            - 4 colunas em desktops (lg)
         ============================================ */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
           {products.map((product) => (
             <ProductCard
               key={product.id}
@@ -102,6 +103,7 @@ export function ProductSection({
               images={product.images}
               category={product.category}
               size={product.size}
+              originalPrice={product.originalPrice}
             />
           ))}
         </div>

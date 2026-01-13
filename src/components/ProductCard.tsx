@@ -32,11 +32,12 @@ import { useCart, Product } from "@/contexts/CartContext";
 interface ProductCardProps {
   id: string;           // ID único do produto
   name: string;         // Nome da pelúcia
-  price: number;        // Preço (ex: 89.90)
+  price: number;        // Preço (ex: 89.90) - preço promocional se houver originalPrice
   image: string;        // Caminho da imagem principal
   images?: string[];    // Imagens adicionais (para carrossel)
   category: string;     // Categoria do produto
   size?: string;        // Tamanho (opcional)
+  originalPrice?: number; // Preço original (para promoções) - opcional
 }
 
 // =====================================================
@@ -51,6 +52,7 @@ export function ProductCard({
   images = [],
   category,
   size,
+  originalPrice,
 }: ProductCardProps) {
   // Acessa a função de adicionar ao carrinho
   const { addToCart } = useCart();
@@ -86,6 +88,7 @@ export function ProductCard({
       image,
       category,
       size,
+      originalPrice,
     };
     addToCart(product);
   };
@@ -128,19 +131,19 @@ export function ProductCard({
           <>
             <button
               onClick={prevImage}
-              className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/95 hover:bg-white text-gray-900 rounded-full p-2 shadow-lg z-20 transition-all hover:scale-110"
+              className="absolute left-1 sm:left-2 top-1/2 -translate-y-1/2 bg-white/95 hover:bg-white text-gray-900 rounded-full p-1.5 sm:p-2 shadow-lg z-20 transition-all hover:scale-110"
               aria-label="Imagem anterior"
               type="button"
             >
-              <ChevronLeft className="w-5 h-5" />
+              <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
             <button
               onClick={nextImage}
-              className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/95 hover:bg-white text-gray-900 rounded-full p-2 shadow-lg z-20 transition-all hover:scale-110"
+              className="absolute right-1 sm:right-2 top-1/2 -translate-y-1/2 bg-white/95 hover:bg-white text-gray-900 rounded-full p-1.5 sm:p-2 shadow-lg z-20 transition-all hover:scale-110"
               aria-label="Próxima imagem"
               type="button"
             >
-              <ChevronRight className="w-5 h-5" />
+              <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
             
             {/* Indicadores de posição */}
@@ -168,26 +171,41 @@ export function ProductCard({
       {/* ============================================
           INFORMAÇÕES DO PRODUTO
       ============================================ */}
-      <div className="p-4">
+      <div className="p-3 sm:p-4">
         {/* Nome do produto */}
-        <h3 className="text-foreground font-semibold text-lg mb-2 line-clamp-2">
+        <h3 className="text-foreground font-semibold text-base sm:text-lg mb-2 line-clamp-2">
           {name}
         </h3>
         
-        {/* Preço em destaque (cor laranja) */}
-        <p className="text-primary font-bold text-xl mb-4">
-          {formatPrice(price)}
-        </p>
+        {/* Preço - mostra formato promocional se houver originalPrice */}
+        {originalPrice ? (
+          <div className="mb-3 sm:mb-4">
+            {/* Preço original riscado */}
+            <p className="text-muted-foreground text-sm sm:text-base line-through mb-1">
+              de {formatPrice(originalPrice)}
+            </p>
+            {/* Preço promocional em destaque */}
+            <p className="text-primary font-bold text-lg sm:text-xl">
+              Por APENAS {formatPrice(price)}
+            </p>
+          </div>
+        ) : (
+          /* Preço normal (sem promoção) */
+          <p className="text-primary font-bold text-lg sm:text-xl mb-3 sm:mb-4">
+            {formatPrice(price)}
+          </p>
+        )}
         
         {/* ============================================
             BOTÃO DE ADICIONAR AO CARRINHO
         ============================================ */}
         <button
           onClick={handleAddToCart}
-          className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium py-3 px-4 rounded-lg flex items-center justify-center gap-2 transition-colors"
+          className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg flex items-center justify-center gap-2 transition-colors text-sm sm:text-base"
         >
-          <ShoppingCart className="w-5 h-5" />
-          Adicionar ao Carrinho
+          <ShoppingCart className="w-4 h-4 sm:w-5 sm:h-5" />
+          <span className="hidden sm:inline">Adicionar ao Carrinho</span>
+          <span className="sm:hidden">Adicionar</span>
         </button>
       </div>
     </div>
