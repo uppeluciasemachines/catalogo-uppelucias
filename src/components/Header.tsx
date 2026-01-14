@@ -64,11 +64,25 @@ export function Header() {
             </span> */}
             
              
-            <img 
+            {/* <img 
               src={`${import.meta.env.BASE_URL}imagens/logo/logo-up.png`}
               alt="UP Universo das Pelúcias" 
               className="h-8 sm:h-10 w-auto"
+            /> */}
+
+            <img
+              src={`${import.meta.env.BASE_URL}imagens/logo/logo-up.png`}
+              alt="Logo"
+              style={{
+                height: "60px",
+                width: "auto",
+                background: "red",
+                border: "3px solid blue",
+                display: "block",
+                zIndex: 9999
+              }}
             />
+
             
           </Link>
 
