@@ -17,6 +17,7 @@
 import { ShoppingCart } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useCart } from "@/contexts/CartContext";
+import logoup from "@/assets/logo/logo-up.png";
 
 // =====================================================
 // ITENS DO MENU DE NAVEGAÇÃO
@@ -63,25 +64,12 @@ export function Header() {
               UP Universo das Pelúcias
             </span> */}
             
-             
-            {/* <img 
-              src={`${import.meta.env.BASE_URL}imagens/logo/logo-up.png`}
-              alt="UP Universo das Pelúcias" 
-              className="h-8 sm:h-10 w-auto"
-            /> */}
+             <img src={logoup}
+              alt="Logo Up"
+              className="h-10 w-auto block" />
+            
 
-            <img
-              src={`${import.meta.env.BASE_URL}imagens/logo/logo-up.png`}
-              alt="Logo"
-              style={{
-                height: "60px",
-                width: "auto",
-                background: "red",
-                border: "3px solid blue",
-                display: "block",
-                zIndex: 9999
-              }}
-            />
+            
 
             
           </Link>
