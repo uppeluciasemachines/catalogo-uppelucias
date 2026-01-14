@@ -25,6 +25,34 @@ import { useState } from "react";
 import { ShoppingCart, ChevronLeft, ChevronRight } from "lucide-react";
 import { useCart, Product } from "@/contexts/CartContext";
 
+/**
+ * Corrige o caminho da imagem considerando o base path do Vite
+ * Usa import.meta.env.BASE_URL para obter o base path configurado
+ */
+const getImagePath = (path: string): string => {
+  // Se o caminho já começa com http ou data, retorna como está
+  if (path.startsWith('http') || path.startsWith('data:')) {
+    return path;
+  }
+  
+  // Remove qualquer prefixo /public/ se existir
+  let cleanPath = path.replace(/^\/public/, '');
+  
+  // Garante que começa com /
+  if (!cleanPath.startsWith('/')) {
+    cleanPath = '/' + cleanPath;
+  }
+  
+  // Obtém o base URL do Vite (ex: "/catalogo-uppelucias" ou "/")
+  const baseUrl = import.meta.env.BASE_URL;
+  
+  // Remove barra final do baseUrl se existir e adiciona o caminho
+  const base = baseUrl.endsWith('/') ? baseUrl.slice(0, -1) : baseUrl;
+  
+  // Retorna o caminho completo com o base
+  return `${base}${cleanPath}`;
+};
+
 // =====================================================
 // TIPOS
 // =====================================================
@@ -61,8 +89,10 @@ export function ProductCard({
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
   // Combina a imagem principal com as imagens adicionais
-  // Filtra strings vazias e valores falsy
-  const allImages = [image, ...(images || [])].filter((img) => img && img.trim() !== "");
+  // Filtra strings vazias e valores falsy e corrige os caminhos
+  const allImages = [image, ...(images || [])]
+    .filter((img) => img && img.trim() !== "")
+    .map((img) => getImagePath(img));
   const hasMultipleImages = allImages.length > 1;
   
   // Navegar para a próxima imagem
@@ -118,13 +148,36 @@ export function ProductCard({
             src={allImages[currentImageIndex]}
             alt={`${name} - Foto ${currentImageIndex + 1}`}
             className="w-full h-full object-cover transition-opacity duration-300"
+            onError={(e) => {
+              // Se a imagem falhar ao carregar, mostra placeholder
+              const target = e.target as HTMLImageElement;
+              console.error(`Erro ao carregar imagem: ${target.src}`);
+              target.style.display = 'none';
+              const placeholder = target.parentElement?.querySelector('.image-placeholder') as HTMLElement;
+              if (placeholder) {
+                placeholder.style.display = 'flex';
+              }
+            }}
+            onLoad={() => {
+              // Esconde placeholder quando imagem carrega com sucesso
+              const img = document.querySelector(`img[src="${allImages[currentImageIndex]}"]`) as HTMLImageElement;
+              if (img) {
+                const placeholder = img.parentElement?.querySelector('.image-placeholder') as HTMLElement;
+                if (placeholder) {
+                  placeholder.style.display = 'none';
+                }
+                img.style.display = 'block';
+              }
+            }}
           />
-        ) : (
-          /* Placeholder quando não há imagem */
-          <div className="w-full h-full flex items-center justify-center text-muted-foreground">
-            <span className="text-sm">Adicione uma foto</span>
-          </div>
-        )}
+        ) : null}
+        {/* Placeholder que aparece quando não há imagem ou quando a imagem falha ao carregar */}
+        <div 
+          className={`image-placeholder w-full h-full flex items-center justify-center text-muted-foreground ${allImages.length > 0 ? 'absolute inset-0' : ''}`}
+          style={{ display: allImages.length > 0 ? 'none' : 'flex' }}
+        >
+          <span className="text-sm">Sem foto</span>
+        </div>
         
         {/* Setas de navegação - aparecem apenas se houver múltiplas imagens */}
         {hasMultipleImages && (
