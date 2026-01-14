@@ -59,17 +59,17 @@ export function Header() {
           ============================================ */}
           <Link to="/" className="flex items-center">
             {/* Texto como logo (atual) - mobile-first: menor em mobile, maior em desktop */}
-            <span className="text-lg sm:text-xl md:text-2xl font-bold text-primary truncate max-w-[200px] sm:max-w-none">
+            {/* <span className="text-lg sm:text-xl md:text-2xl font-bold text-primary truncate max-w-[200px] sm:max-w-none">
               UP Universo das Pelúcias
-            </span>
+            </span> */}
             
-            {/* DESCOMENTE PARA USAR IMAGEM DE LOGO:
+             
             <img 
-              src="/images/logo.png" 
+              src={`${import.meta.env.BASE_URL}imagens/logo/logo-up.png`}
               alt="UP Universo das Pelúcias" 
               className="h-8 sm:h-10 w-auto"
             />
-            */}
+            
           </Link>
 
           {/* ============================================
