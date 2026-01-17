@@ -67,11 +67,7 @@ export function Header() {
              <img src={logoup}
               alt="Logo Up"
               className="h-10 w-auto block" />
-            
-
-            
-
-            
+          
           </Link>
 
           {/* ============================================

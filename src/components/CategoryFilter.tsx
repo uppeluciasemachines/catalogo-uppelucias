@@ -32,6 +32,7 @@ const categories = [
   { id: "personagens", label: "Personagens", path: "/personagens" },
   { id: "categoria-b", label: "Categoria B", path: "/categoria-b" },
   { id: "categoria-c", label: "Categoria C", path: "/categoria-c" },
+  { id: "categoria-c", label: "Categoria C", path: "/categoria-c" },
 ];
 
 // =====================================================

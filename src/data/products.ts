@@ -77,6 +77,17 @@ export const productsPelucias: Product[] = [
     category: "personagens",
     size: "Médio",
   },
+
+   {
+    id: "4",
+    name: "Pelúcia Ursinho Pooh 25cm",
+    price: 56.90,
+    image: "/imagens/produtos/personagens/ursinho pooh.jpg",
+    images: ["/imagens/produtos/personagens/furia-da-luz-lado.jpg", "/imagens/produtos/personagens/furia-da-luz-costas.jpg"],
+    category: "personagens",
+    size: "Médio",
+  },
+  
 ];
 
 // =====================================================
