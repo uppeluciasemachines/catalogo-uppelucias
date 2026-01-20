@@ -34,6 +34,7 @@ export interface Product {
   image: string;        // URL ou caminho da imagem principal
   images?: string[];    // URLs de imagens adicionais (para carrossel)
   category: string;     // Categoria do produto
+  subcategory?: string; // Subcategoria (opcional) - ex: "Stitch", "Marvel", "Animes"
   size?: string;        // Tamanho (opcional)
   originalPrice?: number; // Preço original (para promoções) - opcional
 }

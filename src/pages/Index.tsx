@@ -21,10 +21,12 @@ import { Header } from "@/components/Header";
 import { CategoryFilter } from "@/components/CategoryFilter";
 import { ProductSection } from "@/components/ProductSection";
 import { CartSidebar } from "@/components/CartSidebar";
+import { SearchBar } from "@/components/SearchBar";
 import {
   productsPelucias,
   productsNovidades,
   productsPromocoes,
+  allProducts,
 } from "@/data/products";
 
 // =====================================================
@@ -47,6 +49,16 @@ const Index = () => {
       <CategoryFilter />
 
       {/* ============================================
+          BARRA DE BUSCA
+          Permite buscar produtos no catálogo
+      ============================================ */}
+      <div className="bg-card border-b border-border py-4">
+        <div className="container mx-auto px-3 sm:px-4">
+          <SearchBar products={allProducts} />
+        </div>
+      </div>
+
+      {/* ============================================
           CONTEÚDO PRINCIPAL
           Seções de produtos organizadas verticalmente
       ============================================ */}
@@ -55,25 +67,28 @@ const Index = () => {
           Seções de produtos organizadas verticalmente
       ============================================ */}
       <main>
-        {/* Seção: Pelúcias */}
+        {/* Seção: Pelúcias - Limite de 4 produtos na página principal */}
         <ProductSection
           id="pelucias"
           title="Pelúcias"
           products={productsPelucias}
+          maxProducts={4}
         />
 
-        {/* Seção: Novidades */}
+        {/* Seção: Novidades - Limite de 4 produtos na página principal */}
         <ProductSection
           id="novidades"
           title="Novidades"
           products={productsNovidades}
+          maxProducts={4}
         />
 
-        {/* Seção: Promoções */}
+        {/* Seção: Promoções - Limite de 4 produtos na página principal */}
         <ProductSection
           id="promocoes"
           title="Promoções"
           products={productsPromocoes}
+          maxProducts={4}
         />
       </main>
 

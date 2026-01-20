@@ -130,7 +130,7 @@ export function CartSidebar() {
                   <div className="w-16 h-16 sm:w-20 sm:h-20 bg-muted rounded-lg overflow-hidden flex-shrink-0">
                     {item.image ? (
                       <img
-                        src={item.image}
+                        src={`${import.meta.env.BASE_URL}${item.image}`}
                         alt={item.name}
                         className="w-full h-full object-cover"
                       />

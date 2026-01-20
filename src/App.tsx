@@ -56,6 +56,14 @@ const App = () => (
             <Route path="/novidades" element={<Novidades />} />
             <Route path="/promocoes" element={<Promocoes />} />
             <Route path="/personagens" element={<Personagens />} />
+            {/* Rotas de subcategorias de Personagens */}
+            <Route path="/personagens/stitch" element={<Personagens />} />
+            <Route path="/personagens/marvel" element={<Personagens />} />
+            <Route path="/personagens/animes" element={<Personagens />} />
+            <Route path="/personagens/mario" element={<Personagens />} />
+            <Route path="/personagens/ursinho-pooh" element={<Personagens />} />
+            <Route path="/personagens/grogo" element={<Personagens />} />
+            <Route path="/personagens/como-treinar-o-seu-dragao" element={<Personagens />} />
             <Route path="/categoria-a" element={<CategoriaA />} />
             <Route path="/categoria-b" element={<CategoriaB />} />
             <Route path="/categoria-c" element={<CategoriaC />} />

@@ -29,6 +29,7 @@ interface ProductSectionProps {
   products: Product[];      // Lista de produtos para exibir
   showViewAll?: boolean;    // Mostrar link "Ver Todos"
   showBackButton?: boolean; // Mostrar botão "Voltar"
+  maxProducts?: number;     // Limite de produtos a exibir (opcional)
 }
 
 // =====================================================
@@ -41,9 +42,15 @@ export function ProductSection({
   products,
   showViewAll = true,
   showBackButton = false,
+  maxProducts,
 }: ProductSectionProps) {
+  // Limita produtos se maxProducts for especificado
+  const displayedProducts = maxProducts 
+    ? products.slice(0, maxProducts)
+    : products;
+  
   // Não renderiza se não houver produtos
-  if (products.length === 0) {
+  if (displayedProducts.length === 0) {
     return null;
   }
 
@@ -93,7 +100,7 @@ export function ProductSection({
             - 4 colunas em desktops (lg)
         ============================================ */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
-          {products.map((product) => (
+          {displayedProducts.map((product) => (
             <ProductCard
               key={product.id}
               id={product.id}

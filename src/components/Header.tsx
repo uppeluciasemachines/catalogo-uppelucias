@@ -14,7 +14,8 @@
   3. Comente ou remova a linha com o texto "UP Universo das Pelúcias"
 */
 
-import { ShoppingCart } from "lucide-react";
+import { useState } from "react";
+import { ShoppingCart, Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useCart } from "@/contexts/CartContext";
 import logoup from "@/assets/logo/logo-up.png";
@@ -41,6 +42,9 @@ const menuItems = [
 export function Header() {
   // Acessa o contexto do carrinho
   const { getTotalItems, setIsCartOpen } = useCart();
+  
+  // Estado para controlar menu hamburger (mobile)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   
   // Número de itens no carrinho
   const totalItems = getTotalItems();
@@ -71,7 +75,7 @@ export function Header() {
           </Link>
 
           {/* ============================================
-              MENU DE NAVEGAÇÃO
+              MENU DE NAVEGAÇÃO DESKTOP
               Os itens vêm do array menuItems acima
           ============================================ */}
           <nav className="hidden md:flex items-center gap-8">
@@ -87,24 +91,61 @@ export function Header() {
           </nav>
 
           {/* ============================================
-              ÍCONE DO CARRINHO
-              Clique para abrir a barra lateral
+              BOTÕES DO LADO DIREITO
+              Menu hamburger (mobile) + Carrinho
           ============================================ */}
-          <button
-            onClick={() => setIsCartOpen(true)}
-            className="relative p-1.5 sm:p-2 hover:bg-secondary rounded-lg transition-colors flex-shrink-0"
-            aria-label="Abrir carrinho"
-          >
-            <ShoppingCart className="w-5 h-5 sm:w-6 sm:h-6 text-foreground" />
-            
-            {/* Contador de itens (aparece se houver itens) */}
-            {totalItems > 0 && (
-              <span className="absolute -top-1 -right-1 bg-primary text-primary-foreground text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center">
-                {totalItems > 99 ? "99+" : totalItems}
-              </span>
-            )}
-          </button>
+          <div className="flex items-center gap-2">
+            {/* Menu Hamburger - Mobile Only */}
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="md:hidden p-1.5 hover:bg-secondary rounded-lg transition-colors"
+              aria-label="Abrir menu"
+            >
+              {isMenuOpen ? (
+                <X className="w-6 h-6 text-foreground" />
+              ) : (
+                <Menu className="w-6 h-6 text-foreground" />
+              )}
+            </button>
+
+            {/* ÍCONE DO CARRINHO */}
+            <button
+              onClick={() => setIsCartOpen(true)}
+              className="relative p-1.5 sm:p-2 hover:bg-secondary rounded-lg transition-colors flex-shrink-0"
+              aria-label="Abrir carrinho"
+            >
+              <ShoppingCart className="w-5 h-5 sm:w-6 sm:h-6 text-foreground" />
+              
+              {/* Contador de itens (aparece se houver itens) */}
+              {totalItems > 0 && (
+                <span className="absolute -top-1 -right-1 bg-primary text-primary-foreground text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center">
+                  {totalItems > 99 ? "99+" : totalItems}
+                </span>
+              )}
+            </button>
+          </div>
         </div>
+
+        {/* ============================================
+            MENU HAMBURGER EXPANDIDO (MOBILE)
+            Aparece abaixo do header quando aberto
+        ============================================ */}
+        {isMenuOpen && (
+          <nav className="md:hidden border-t border-border bg-card">
+            <div className="container mx-auto px-3 sm:px-4 py-3 space-y-2">
+              {menuItems.map((item) => (
+                <Link
+                  key={item.href}
+                  to={item.href}
+                  onClick={() => setIsMenuOpen(false)}
+                  className="block py-2 text-foreground hover:text-primary transition-colors font-medium text-base"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+          </nav>
+        )}
       </div>
     </header>
   );
