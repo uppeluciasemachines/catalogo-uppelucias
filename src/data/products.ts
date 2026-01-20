@@ -2,25 +2,6 @@
   =====================================================
   DADOS DOS PRODUTOS - CATÁLOGO DE PELÚCIAS
   =====================================================
-  
-  Este arquivo contém todos os produtos do catálogo.
-  Edite aqui para adicionar, remover ou modificar pelúcias.
-  
-  COMO ADICIONAR UM NOVO PRODUTO:
-  1. Copie um bloco de produto existente
-  2. Altere os valores (id, name, price, image, category)
-  3. Salve o arquivo
-  
-  IMPORTANTE:
-  - O ID deve ser único para cada produto
-  - O preço deve ser um número (ex: 89.90, não "R$ 89,90")
-  - A categoria deve corresponder a uma das categorias em CategoryFilter.tsx
-  
-  SOBRE AS IMAGENS:
-  1. Crie a pasta: public/images/produtos/
-  2. Salve suas fotos lá
-  3. Use o caminho: /images/produtos/nome-da-foto.jpg
-  4. Deixe image: "" para mostrar placeholder
 */
 
 import { Product } from "@/contexts/CartContext";
@@ -29,24 +10,12 @@ import { Product } from "@/contexts/CartContext";
 // LISTA DE PRODUTOS - SEÇÃO PELÚCIAS
 // =====================================================
 
-/**
- * Produtos da seção principal "Pelúcias"
- * 
- * ESTRUTURA DE CADA PRODUTO:
- * - id: identificador único (string)
- * - name: nome que aparece no card
- * - price: preço em reais (número decimal)
- * - image: caminho da imagem ou "" para placeholder
- * - category: categoria para filtro
- * - size: tamanho (opcional)
- */
-
 export const productsPelucias: Product[] = [
   {
     id: "1",
     name: "Pelúcia Stitch 30cm",
     price: 89.90,
-    image: "imagens/Personagens/Stitch/stitch-frente.jpg",
+    image: "/imagens/Personagens/Stitch/stitch-frente.jpg",
     images: ["/imagens/Personagens/Stitch/stitch-lado.jpg", "/imagens/Personagens/Stitch/stitch-costas.jpg"],
     category: "personagens",
     subcategory: "stitch",
@@ -55,7 +24,7 @@ export const productsPelucias: Product[] = [
     id: "2",
     name: "Pelúcia Angel 30cm",
     price: 65.90,
-    image: "imagens/Personagens/Stitch/angel-frente.jpg",
+    image: "/imagens/Personagens/Stitch/angel-frente.jpg",
     images: ["/imagens/Personagens/Stitch/angel-lado.jpg", "/imagens/Personagens/Stitch/angel-costas.jpg"],
     category: "personagens",
     subcategory: "stitch",
@@ -83,7 +52,7 @@ export const productsPelucias: Product[] = [
     id: "5",
     name: "Pelúcia Ursinho Pooh 30cm",
     price: 56.90,
-    image: "imagens/Personagens/Ursinho pooh/pooh-frente02.webp",
+    image: "imagens/Personagens/Ursinho pooh/pooh-frente02-editada.jpg",
     images: ["imagens/Personagens/Ursinho pooh/pooh-lado02.webp","imagens/Personagens/Ursinho pooh/pooh-costas.webp"],
     category: "personagens",
     subcategory: "ursinho-pooh",
@@ -94,7 +63,7 @@ export const productsPelucias: Product[] = [
     name: "Pelúcia Ursinho Pooh 25cm",
     price: 11.11,
     image: "imagens/Personagens/Ursinho pooh/pooh-p-frente01.webp",
-    images: ["imagens/Personagens/Ursinho pooh/pooh-p-lado01.webp", "imagens/Personagens/Ursinho pooh/pooh-p-costas.webp"],
+    images: ["imagens/Personagens/Ursinho pooh/pooh-p-lado.webp", "imagens/Personagens/Ursinho pooh/pooh-p-costas.webp"],
     category: "personagens",
     subcategory: "ursinho-pooh",
   },
@@ -103,7 +72,7 @@ export const productsPelucias: Product[] = [
     name: "Pelúcia Tigrão 30cm",
     price: 11.11,
     image: "imagens/Personagens/Ursinho pooh/tigrao-frente.webp",
-    images: ["imagens/Personagens/Ursinho pooh/tigrao-lado.webp", "imagens/Personagens/Ursinho pooh/tigrao-costas"],
+    images: ["imagens/Personagens/Ursinho pooh/tigrao-lado.webp", "imagens/Personagens/Ursinho pooh/tigrao-costas.webp"],
     category: "personagens",
     subcategory: "ursinho-pooh",
   },
@@ -513,10 +482,6 @@ export const productsPelucias: Product[] = [
 // LISTA DE PRODUTOS - SEÇÃO NOVIDADES
 // =====================================================
 
-/**
- * Produtos da seção "Novidades"
- * Mesma estrutura dos produtos acima
- */
 export const productsNovidades: Product[] = [
   // {
   //   id: "6",
@@ -557,10 +522,6 @@ export const productsNovidades: Product[] = [
 // LISTA DE PRODUTOS - SEÇÃO PROMOÇÕES
 // =====================================================
 
-/**
- * Produtos da seção "Promoções"
- * Inclui preço original (originalPrice) para exibir formato promocional
- */
 export const productsPromocoes: Product[] = [
   {
     id: "9",

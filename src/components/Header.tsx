@@ -2,16 +2,6 @@
   =====================================================
   COMPONENTE: CABEÇALHO (HEADER)
   =====================================================
-  
-  Cabeçalho fixo no topo da página contendo:
-  - Logo/Nome da loja
-  - Menu de navegação
-  - Ícone do carrinho com contador
-  
-  COMO ADICIONAR A LOGO:
-  1. Salve sua imagem de logo na pasta: public/images/logo.png
-  2. Descomente a linha com <img> abaixo
-  3. Comente ou remova a linha com o texto "UP Universo das Pelúcias"
 */
 
 import { useState } from "react";
@@ -24,11 +14,6 @@ import logoup from "@/assets/logo/logo-up.png";
 // ITENS DO MENU DE NAVEGAÇÃO
 // =====================================================
 
-/**
- * Lista de categorias do menu
- * PARA ADICIONAR/REMOVER ITENS:
- * Modifique este array conforme necessário
- */
 const menuItems = [
   { label: "Pelúcias", href: "/pelucias" },
   { label: "Novidades", href: "/novidades" },
@@ -56,18 +41,8 @@ export function Header() {
           
           {/* ============================================
               LOGO / NOME DA LOJA
-              
-              PARA USAR UMA IMAGEM DE LOGO:
-              1. Comente o <span> abaixo
-              2. Descomente o <img> 
-              3. Coloque sua logo em: public/images/logo.png
           ============================================ */}
           <Link to="/" className="flex items-center">
-            {/* Texto como logo (atual) - mobile-first: menor em mobile, maior em desktop */}
-            {/* <span className="text-lg sm:text-xl md:text-2xl font-bold text-primary truncate max-w-[200px] sm:max-w-none">
-              UP Universo das Pelúcias
-            </span> */}
-            
              <img src={logoup}
               alt="Logo Up"
               className="h-10 w-auto block" />

@@ -1,21 +1,3 @@
-/* 
-  =====================================================
-  DESIGN SYSTEM - UP Universo das Pelúcias
-  =====================================================
-  
-  Este arquivo define todas as cores e estilos do site.
-  Para alterar cores, modifique os valores HSL abaixo.
-  
-  COMO FUNCIONA HSL:
-  - H (Hue/Matiz): 0-360 (cor no círculo cromático)
-  - S (Saturation): 0-100% (intensidade da cor)
-  - L (Lightness): 0-100% (claridade)
-  
-  CORES PRINCIPAIS:
-  - Laranja (primary): usado em botões e preços
-  - Amarelo (accent): usado em etiquetas de categoria
-  - Verde WhatsApp: usado no botão de enviar pedido
-*/
 
 @tailwind base;
 @tailwind components;

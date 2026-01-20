@@ -2,19 +2,6 @@
   =====================================================
   CONTEXTO DO CARRINHO DE COMPRAS
   =====================================================
-  
-  Este arquivo gerencia o estado do carrinho em toda a aplicação.
-  
-  FUNCIONALIDADES:
-  - Adicionar produtos ao carrinho
-  - Remover produtos do carrinho
-  - Atualizar quantidade de produtos
-  - Calcular total do pedido
-  - Gerar mensagem para WhatsApp
-  
-  COMO USAR EM OUTROS COMPONENTES:
-  import { useCart } from "@/contexts/CartContext";
-  const { cart, addToCart, removeFromCart } = useCart();
 */
 
 import React, { createContext, useContext, useState, ReactNode } from "react";
@@ -23,20 +10,17 @@ import React, { createContext, useContext, useState, ReactNode } from "react";
 // TIPOS DE DADOS
 // =====================================================
 
-/**
- * Estrutura de um produto
- * Modifique aqui se precisar adicionar mais campos
- */
+
 export interface Product {
-  id: string;           // Identificador único
-  name: string;         // Nome da pelúcia
-  price: number;        // Preço em reais (ex: 89.90) - preço promocional se houver originalPrice
-  image: string;        // URL ou caminho da imagem principal
-  images?: string[];    // URLs de imagens adicionais (para carrossel)
-  category: string;     // Categoria do produto
-  subcategory?: string; // Subcategoria (opcional) - ex: "Stitch", "Marvel", "Animes"
-  size?: string;        // Tamanho (opcional)
-  originalPrice?: number; // Preço original (para promoções) - opcional
+  id: string;          
+  name: string;         
+  price: number;        
+  image: string;        
+  images?: string[];    
+  category: string;     
+  subcategory?: string; 
+  size?: string;        
+  originalPrice?: number; 
 }
 
 /**
@@ -50,16 +34,16 @@ export interface CartItem extends Product {
  * Funções disponíveis no contexto do carrinho
  */
 interface CartContextType {
-  cart: CartItem[];                                    // Lista de itens no carrinho
-  addToCart: (product: Product) => void;               // Adicionar produto
-  removeFromCart: (productId: string) => void;         // Remover produto
-  updateQuantity: (productId: string, qty: number) => void; // Atualizar quantidade
-  clearCart: () => void;                               // Limpar carrinho
-  getTotalItems: () => number;                         // Total de itens
-  getTotalPrice: () => number;                         // Valor total
-  generateWhatsAppMessage: () => string;               // Gerar mensagem WhatsApp
-  isCartOpen: boolean;                                 // Carrinho aberto?
-  setIsCartOpen: (open: boolean) => void;              // Abrir/fechar carrinho
+  cart: CartItem[];                                    
+  addToCart: (product: Product) => void;              
+  removeFromCart: (productId: string) => void;         
+  updateQuantity: (productId: string, qty: number) => void; 
+  clearCart: () => void;                               
+  getTotalItems: () => number;                         
+  getTotalPrice: () => number;                        
+  generateWhatsAppMessage: () => string;               
+  isCartOpen: boolean;                                
+  setIsCartOpen: (open: boolean) => void;             
 }
 
 // =====================================================
@@ -150,9 +134,6 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   /**
    * Gera a mensagem formatada para enviar via WhatsApp
-   * 
-   * PERSONALIZE A MENSAGEM:
-   * Altere o texto abaixo conforme necessário
    */
   const generateWhatsAppMessage = () => {
     // Cabeçalho da mensagem
@@ -199,12 +180,6 @@ export function CartProvider({ children }: { children: ReactNode }) {
 // HOOK PARA USAR O CARRINHO
 // =====================================================
 
-/**
- * Hook personalizado para acessar o carrinho
- * 
- * EXEMPLO DE USO:
- * const { cart, addToCart } = useCart();
- */
 export function useCart() {
   const context = useContext(CartContext);
   

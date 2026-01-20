@@ -2,9 +2,6 @@
   =====================================================
   COMPONENTE: BARRA DE BUSCA
   =====================================================
-  
-  Barra de busca para pesquisar produtos no catálogo.
-  Mobile-first design.
 */
 
 import { useState, useMemo } from "react";
@@ -17,8 +14,8 @@ import { ProductCard } from "./ProductCard";
 // =====================================================
 
 interface SearchBarProps {
-  products: Product[];  // Lista completa de produtos para buscar
-  placeholder?: string; // Texto do placeholder
+  products: Product[];  
+  placeholder?: string; 
 }
 
 // =====================================================

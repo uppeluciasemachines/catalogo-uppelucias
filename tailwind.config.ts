@@ -1,11 +1,3 @@
-/*
-  =====================================================
-  CONFIGURAÇÃO DO TAILWIND - UP Universo das Pelúcias
-  =====================================================
-  
-  Este arquivo configura as classes CSS disponíveis.
-  As cores definidas aqui correspondem às variáveis em index.css
-*/
 
 import type { Config } from "tailwindcss";
 
@@ -28,7 +20,7 @@ export default {
     },
     extend: {
       colors: {
-        /* Cores do sistema - NÃO ALTERAR AQUI, alterar em index.css */
+        /* Cores do sistema, alterar somente no index.css */
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

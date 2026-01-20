@@ -2,15 +2,6 @@
   =====================================================
   ARQUIVO PRINCIPAL DA APLICAÇÃO
   =====================================================
-  
-  Este arquivo configura a estrutura base do aplicativo.
-  Normalmente você não precisa modificar este arquivo.
-  
-  ESTRUTURA:
-  - CartProvider: gerencia o estado do carrinho em toda a aplicação
-  - QueryClientProvider: gerencia requisições de dados (para futuras integrações)
-  - TooltipProvider: permite tooltips em elementos
-  - BrowserRouter: gerencia navegação entre páginas
 */
 
 import { Toaster } from "@/components/ui/toaster";

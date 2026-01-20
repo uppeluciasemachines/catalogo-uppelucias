@@ -9,7 +9,7 @@ export default defineConfig(({ mode }) => ({
     mode === "development" && componentTagger(),
   ].filter(Boolean),
 
-  // 🔥 DEV LIMPO / PROD PAGES
+ 
   base: mode === "production" ? "/catalogo-uppelucias/" : "/",
 
   build: {
@@ -18,7 +18,7 @@ export default defineConfig(({ mode }) => ({
   },
 
   server: {
-    port: 5173, // 🔥 volta pro padrão do Vite
+    port: 5173, 
   },
 
   resolve: {

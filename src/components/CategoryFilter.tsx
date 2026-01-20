@@ -3,11 +3,6 @@
   COMPONENTE: FILTRO DE CATEGORIAS
   =====================================================
   
-  Barra de botões para navegar entre categorias.
-  Fica logo abaixo do cabeçalho.
-  
-  PARA PERSONALIZAR AS CATEGORIAS:
-  Modifique o array "categories" abaixo
 */
 
 import { Link, useLocation } from "react-router-dom";
@@ -16,17 +11,6 @@ import { Link, useLocation } from "react-router-dom";
 // LISTA DE CATEGORIAS DISPONÍVEIS
 // =====================================================
 
-/**
- * Categorias para navegação
- * 
- * COMO EDITAR:
- * - id: identificador único (usar em minúsculas, sem espaços)
- * - label: texto que aparece no botão
- * - path: caminho da página
- * 
- * EXEMPLO:
- * { id: "personagens", label: "Personagens", path: "/personagens" }
- */
 const categories = [
   { id: "todos", label: "Todos", path: "/" },
   { id: "personagens", label: "Personagens", path: "/personagens" },

@@ -3,8 +3,6 @@
   PÁGINA: PERSONAGENS
   =====================================================
   
-  Exibe todos os produtos da categoria Personagens
-  com filtro de subcategorias.
 */
 
 import { useState } from "react";

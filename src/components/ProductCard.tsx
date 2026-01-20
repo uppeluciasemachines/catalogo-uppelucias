@@ -2,23 +2,6 @@
   =====================================================
   COMPONENTE: CARD DE PRODUTO
   =====================================================
-  
-  Card individual para exibir uma pelúcia.
-  Contém: imagem, nome, preço e botão de adicionar ao carrinho.
-  
-  COMO USAR:
-  <ProductCard
-    id="1"
-    name="Pelúcia Stitch"
-    price={89.90}
-    image="/images/produtos/stitch.jpg"
-    category="personagens"
-  />
-  
-  PERSONALIZANDO IMAGENS:
-  1. Crie a pasta: public/images/produtos/
-  2. Salve suas fotos lá (ex: stitch.jpg, grogu.jpg)
-  3. Use o caminho: /images/produtos/nome-da-imagem.jpg
 */
 
 import { useState } from "react";
@@ -58,14 +41,14 @@ const getImagePath = (path: string): string => {
 // =====================================================
 
 interface ProductCardProps {
-  id: string;           // ID único do produto
-  name: string;         // Nome da pelúcia
-  price: number;        // Preço (ex: 89.90) - preço promocional se houver originalPrice
-  image: string;        // Caminho da imagem principal
-  images?: string[];    // Imagens adicionais (para carrossel)
-  category: string;     // Categoria do produto
-  size?: string;        // Tamanho (opcional)
-  originalPrice?: number; // Preço original (para promoções) - opcional
+  id: string;           
+  name: string;         
+  price: number;        
+  image: string;        
+  images?: string[];    
+  category: string;     
+  size?: string;        
+  originalPrice?: number; 
 }
 
 // =====================================================
@@ -133,13 +116,7 @@ export function ProductCard({
   return (
     <div className="bg-card rounded-lg overflow-hidden card-shadow hover:card-shadow-hover transition-shadow">
       {/* ============================================
-          ÁREA DA IMAGEM COM CARROSSEL
-          
-          INSTRUÇÕES PARA ADICIONAR IMAGENS:
-          1. Salve as fotos em: public/images/produtos/
-          2. Use image para a foto principal
-          3. Use images[] para fotos adicionais
-          
+          ÁREA DA IMAGEM COM CARROSSEL.  
           Se não houver imagem, mostra uma área cinza
       ============================================ */}
       <div className="relative aspect-square bg-muted group">
@@ -148,6 +125,10 @@ export function ProductCard({
             src={allImages[currentImageIndex]}
             alt={`${name} - Foto ${currentImageIndex + 1}`}
             className="w-full h-full object-cover transition-opacity duration-300"
+            loading="lazy"
+            decoding="async"
+            width="300"
+            height="300"
             onError={(e) => {
               // Se a imagem falhar ao carregar, mostra placeholder
               const target = e.target as HTMLImageElement;

@@ -2,8 +2,6 @@
   =====================================================
   PÁGINA: NOVIDADES
   =====================================================
-  
-  Exibe todos os produtos da categoria Novidades.
 */
 
 import { Header } from "@/components/Header";

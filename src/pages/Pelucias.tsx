@@ -2,8 +2,6 @@
   =====================================================
   PÁGINA: PELÚCIAS
   =====================================================
-  
-  Exibe todos os produtos da categoria Pelúcias.
 */
 
 import { Header } from "@/components/Header";

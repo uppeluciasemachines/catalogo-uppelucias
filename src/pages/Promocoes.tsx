@@ -2,8 +2,6 @@
   =====================================================
   PÁGINA: PROMOÇÕES
   =====================================================
-  
-  Exibe todos os produtos da categoria Promoções.
 */
 
 import { Header } from "@/components/Header";

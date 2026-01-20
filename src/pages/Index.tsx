@@ -3,18 +3,6 @@
   PÁGINA PRINCIPAL - UP UNIVERSO DAS PELÚCIAS
   =====================================================
   
-  Esta é a página inicial do catálogo.
-  Contém:
-  - Cabeçalho com logo e menu
-  - Filtro de categorias
-  - Seções de produtos (Pelúcias, Novidades, Promoções)
-  - Sidebar do carrinho
-  
-  PARA PERSONALIZAR:
-  - Produtos: edite src/data/products.ts
-  - Categorias: edite src/components/CategoryFilter.tsx
-  - Cores: edite src/index.css
-  - WhatsApp: edite src/components/CartSidebar.tsx
 */
 
 import { Header } from "@/components/Header";

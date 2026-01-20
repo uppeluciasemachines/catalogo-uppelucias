@@ -3,15 +3,6 @@
   COMPONENTE: SEÇÃO DE PRODUTOS
   =====================================================
   
-  Exibe uma seção com título e grid de produtos.
-  Usado para criar as seções: Pelúcias, Novidades, Promoções.
-  
-  COMO USAR:
-  <ProductSection
-    id="pelucias"
-    title="Pelúcias"
-    products={listaDeProdutos}
-  />
 */
 
 import { ArrowRight, ArrowLeft } from "lucide-react";
@@ -24,12 +15,12 @@ import { Product } from "@/contexts/CartContext";
 // =====================================================
 
 interface ProductSectionProps {
-  id: string;               // ID para navegação (ex: "pelucias")
-  title: string;            // Título da seção
-  products: Product[];      // Lista de produtos para exibir
-  showViewAll?: boolean;    // Mostrar link "Ver Todos"
-  showBackButton?: boolean; // Mostrar botão "Voltar"
-  maxProducts?: number;     // Limite de produtos a exibir (opcional)
+  id: string;               
+  title: string;            
+  products: Product[];      
+  showViewAll?: boolean;   
+  showBackButton?: boolean; 
+  maxProducts?: number;     
 }
 
 // =====================================================
@@ -72,7 +63,6 @@ export function ProductSection({
 
         {/* ============================================
             CABEÇALHO DA SEÇÃO
-            Título à esquerda, link "Ver Todos" à direita
         ============================================ */}
         <div className="flex items-center justify-between mb-4 sm:mb-6 gap-2">
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground">
@@ -92,12 +82,8 @@ export function ProductSection({
         </div>
 
         {/* ============================================
-            GRID DE PRODUTOS
-            
-            Responsivo (mobile-first):
-            - 2 colunas em telas pequenas (mobile) - padrão
-            - 3 colunas em tablets (md)
-            - 4 colunas em desktops (lg)
+            GRID DE PRODUTOS.
+            Responsivo (mobile-first)
         ============================================ */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
           {displayedProducts.map((product) => (

@@ -2,9 +2,6 @@
   =====================================================
   COMPONENTE: FILTRO DE SUBCATEGORIAS
   =====================================================
-  
-  Filtro horizontal com scroll para subcategorias.
-  Mobile-first com scroll horizontal nativo.
 */
 
 import { Link, useLocation } from "react-router-dom";

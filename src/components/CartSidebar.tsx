@@ -3,12 +3,6 @@
   COMPONENTE: BARRA LATERAL DO CARRINHO
   =====================================================
   
-  Sidebar que aparece ao clicar no ícone do carrinho.
-  Mostra os itens selecionados, total e botão do WhatsApp.
-  
-  CONFIGURAÇÃO DO WHATSAPP:
-  Altere o número de telefone na constante abaixo.
-  Use o formato internacional sem espaços ou símbolos.
 */
 
 import { X, Plus, Minus, Trash2, MessageCircle } from "lucide-react";
@@ -18,18 +12,7 @@ import { useCart } from "@/contexts/CartContext";
 // CONFIGURAÇÃO DO WHATSAPP
 // =====================================================
 
-/**
- * NÚMERO DO WHATSAPP PARA RECEBER PEDIDOS
- * 
- * COMO CONFIGURAR:
- * 1. Use o formato internacional: código do país + DDD + número
- * 2. Não use espaços, traços ou parênteses
- * 
- * EXEMPLOS:
- * - Brasil: 5511999999999 (55 = Brasil, 11 = DDD, resto = número)
- * - Portugal: 351912345678
- */
-const WHATSAPP_NUMBER = "5511999999999"; // ← ALTERE AQUI SEU NÚMERO
+const WHATSAPP_NUMBER = "5511999999999"; 
 
 // =====================================================
 // COMPONENTE PRINCIPAL
@@ -79,8 +62,7 @@ export function CartSidebar() {
 
   return (
     <>
-      {/* ============================================
-          OVERLAY ESCURO
+      {/* ===========================================
           Clique para fechar o carrinho
       ============================================ */}
       <div
