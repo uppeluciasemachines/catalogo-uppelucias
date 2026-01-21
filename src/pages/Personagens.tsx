@@ -27,6 +27,18 @@ const subcategories = [
   { id: "grogo", label: "Grogo", path: "/personagens/grogo" },
   { id: "como-treinar-o-seu-dragão", label: "Como treinar o seu dragão", path: "/personagens/como-treinar-o-seu-dragao" },
   { id: "ursinho-pooh", label: "Ursinho Pooh", path: "/personagens/ursinho-pooh" },
+  { id: "bob-esponja", label: "Bob Esponja", path: "/personagens/bob-esponja"},
+  { id: "garfield", label: "Garfield", path: "/personagens/garfield"},
+  { id: "hello-kitty", label: "Hello-Kitty/Kuromi", path:"/personagens/hello-kitty"},
+  { id: "mickey", label: "Mickey", path: "/personagens/mickey"},
+  { id: "looney-tunes", label: "Looney Tunes", path: "/personagens/looney-tunes"},
+  { id: "minions", label: "Minions", path: "/personagens/minions"},
+  { id: "monstros-sa", label: "Monstros S.A", path: "/personagens/monstros-sa"},
+  { id: "popeye", label: "Popeye", path: "/personagens/popeye"},
+  { id: "smurfs", label: "Os Smurfs", path: "/personagens/smurfs"},
+  { id: "sonic", label: "Sonic", path: "/personagens/sonic"},
+  { id: "toystory", label: "Toy Story", path: "/personagens/toystory"},
+  { id: "tartaruga-ninja", label: "Tartarugas Ninjas", path: "/personagens/tartaruga-ninja"},
 ];
 
 const Personagens = () => {

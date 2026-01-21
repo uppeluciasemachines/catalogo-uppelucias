@@ -499,6 +499,7 @@ export const productsNovidades: Product[] = [
     image: "imagens/Personagens/Mickey/mickey-frente.jpg",
     images: ["imagens/Personagens/Mickey/mickey-lado.jpg","imagens/Personagens/Mickey/mickey-costas.jpg"],
     category: "personagens",
+    subcategory: "mickey"
   },
   {
     id: "8",
@@ -507,6 +508,7 @@ export const productsNovidades: Product[] = [
     image: "imagens/Personagens/Mickey/minnie-frente.jpg",
     images: ["imagens/Personagens/Mickey/minnie-lado.jpg", "imagens/Personagens/Mickey/minnie-costas.jpg"],
     category: "personagens",
+    subcategory: "mickey"
   },
   {
     id: "9",
@@ -515,6 +517,7 @@ export const productsNovidades: Product[] = [
     image: "imagens/Personagens/Hello kit-Kuromi/hellokitty-frente.webp",
     images: ["imagens/Personagens/Hello kit-Kuromi/hellokitty-lado.webp","imagens/Personagens/Hello kit-Kuromi/hellokitty-costas.webp"],
     category: "personagens",
+    subcategory: "hello-kitty"
   },
 ];
 
@@ -531,6 +534,7 @@ export const productsPromocoes: Product[] = [
     image: "imagens/Personagens/Pokemon/pikachu-frente.jpg",
     images: ["imagens/Personagens/Pokemon/pikachu-lado.jpg","imagens/Personagens/Pokemon/pikachu-costas.jpg"],
     category: "personagens",
+    subcategory: "animes",
   },
   {
     id: "10",
@@ -540,6 +544,7 @@ export const productsPromocoes: Product[] = [
     image: "imagens/Personagens/Bob esponja/patrick-frente-02.jpg",
     images: ["imagens/Personagens/Bob esponja/patrick-lado.jpg", "imagens/Personagens/Bob esponja/patrick-costas.jpg"],
     category: "personagens",
+    subcategory: "bob-esponja",
   },
   {
     id: "11",
@@ -549,6 +554,7 @@ export const productsPromocoes: Product[] = [
     image: "imagens/Personagens/Bob esponja/bob-esponja-frente-02.jpg",
     images: ["imagens/Personagens/Bob esponja/bob-esponja-lado.jpg", "imagens/Personagens/Bob esponja/bob-esponja-costas.jpg"],
     category: "personagens",
+    subcategory: "bob-esponja",
   },
   {
     id: "12",
